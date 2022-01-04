@@ -27,10 +27,11 @@ namespace HipsterSaturn_Bot
     internal class Program
     {
         public static string prefix;
+        public static IConfigurationRoot config;
 
         static async Task Main(string[] args)
         {
-            var config = new ConfigurationBuilder()
+            config = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
                 .AddJsonFile("appsettings.json")
                 .AddUserSecrets<Program>()
