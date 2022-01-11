@@ -21,6 +21,12 @@ using Remora.Discord.Pagination.Extensions;
 using Remora.Rest.Core;
 using Remora.Results;
 using HipsterSaturn_Bot.Responders;
+using Remora.Discord.API.Abstractions.Gateway.Commands;
+using Remora.Discord.API.Gateway.Commands;
+using Remora.Discord.API.Abstractions.Objects;
+using System.Collections.Generic;
+using OneOf;
+using Remora.Discord.API.Objects;
 
 namespace HipsterSaturn_Bot
 {
@@ -50,6 +56,17 @@ namespace HipsterSaturn_Bot
             var services = new ServiceCollection()
                 .AddDiscordGateway(_ => botToken)
                 .AddResponder<CommandResponder>()
+                .Configure<DiscordGatewayClientOptions>(options =>
+                {
+                    options.Presence = new UpdatePresence(ClientStatus.Online, false, DateTimeOffset.Now, new List<IActivity>()
+                    {
+                        new Activity
+                        (
+                            "pedo! | Grooming Children",
+                            ActivityType.Game
+                        )
+                    });
+                })
                 .AddLogging(builder => builder.AddConsole())
                 .BuildServiceProvider();
 
