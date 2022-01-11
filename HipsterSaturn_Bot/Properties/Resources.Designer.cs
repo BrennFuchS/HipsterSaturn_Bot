@@ -59,14 +59,5 @@ namespace HipsterSaturn_Bot.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
-        /// </summary>
-        internal static string OTI1ODMxMTg0NDkwMDQ1NDcy_Ycy1ew_fagwA0sGqsdjRwCDlejUI2OTkTk {
-            get {
-                return ResourceManager.GetString("OTI1ODMxMTg0NDkwMDQ1NDcy.Ycy1ew.fagwA0sGqsdjRwCDlejUI2OTkTk", resourceCulture);
-            }
-        }
     }
 }
